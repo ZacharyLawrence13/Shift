@@ -6,12 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;             //Floating point variable to store the player's movement speed.
     public float jumpForce;
-    public float fallForce;
 
     public bool isGrounded = false;
 
     public Vector3 jump;
-    public Vector3 fall;
 
     private Rigidbody2D rb2d;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
 
@@ -21,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
         //Get and store a reference to the Rigidbody2D component so that we can access it.
         rb2d = GetComponent<Rigidbody2D>();
         jump = new Vector3(0.0f, 2.0f);
-        fall = new Vector3(0.0f, -1.0f);
     }
 
     private void OnTriggerStay2D()
