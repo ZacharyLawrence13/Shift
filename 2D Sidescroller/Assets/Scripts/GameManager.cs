@@ -7,10 +7,10 @@ public class GameManager : MonoBehaviour {
     public GameObject world1;
     public GameObject world2;
 
-    public int worldCounter = 2;
+    public int worldCounter = 0;
 
 	void Start () {
-        
+        world2.SetActive(false);
 	}
 	
 	void Update () {
@@ -21,10 +21,12 @@ public class GameManager : MonoBehaviour {
             if(worldCounter % 2 == 0)
             {
                 world1.SetActive(true);
+                world2.SetActive(false);
             }
             else
             {
                 world2.SetActive(true);
+                world1.SetActive(false);
             }
         }
     }
