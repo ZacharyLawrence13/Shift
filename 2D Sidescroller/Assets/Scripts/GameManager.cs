@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour {
     public GameObject world1;
     public GameObject world2;
 
+    public GameObject player;
+
+    Vector2 playerStartingPosition = new Vector2(-30, 16);
+
     public int worldCounter = 0;
 
 	void Start () {
@@ -29,5 +33,17 @@ public class GameManager : MonoBehaviour {
                 world1.SetActive(false);
             }
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            player.transform.position = playerStartingPosition;
+        }
+
     }
+
+    public void ResetCharacterPosition()
+    {
+
+    }
+
 }

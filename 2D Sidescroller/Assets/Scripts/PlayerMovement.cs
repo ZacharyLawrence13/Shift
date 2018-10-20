@@ -35,10 +35,10 @@ public class PlayerMovement : MonoBehaviour
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
-        rb2d.gravityScale = 1;
+        rb2d.gravityScale = 2;
 
         //Store the current horizontal input in the float moveHorizontal.
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveHorizontal = Input.GetAxis("Horizontal");
 
         //Store the current vertical input in the float moveVertical.
         //float moveVertical = Input.GetAxisRaw("Vertical");
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
         if ((Input.GetKey(KeyCode.S)))
         {
-            rb2d.gravityScale = 4;
+            rb2d.gravityScale = 5;
             Debug.Log("Fall was pressed");
         }
     }
