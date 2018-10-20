@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
 
     public int worldCounter = 0;
 
+    public bool canChangeLevel = true;
+
 	void Start () {
         world2.SetActive(false);
 	}
@@ -21,6 +23,8 @@ public class GameManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.LeftShift))    // When left shift is pressed
         {
+            StartCoroutine("ShiftTimer");
+            canChangeLevel = false;
             worldCounter++;
             if(worldCounter % 2 == 0)
             {
@@ -38,7 +42,12 @@ public class GameManager : MonoBehaviour {
         {
             player.transform.position = playerStartingPosition;
         }
+    }
 
+    IEnumerator ShiftTimer()
+    {
+        yield return new WaitForSeconds(1f);
+        canChangeLevel = true;
     }
 
     public void ResetCharacterPosition()
